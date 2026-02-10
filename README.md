@@ -14,6 +14,7 @@ Add this in your init.lua or plugins.lua:
 ```lua
 {
   "joao-lobao/extract-tool.nvim",
+  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter/nvim-treesitter-textobjects" },
   config = function()
     require("extract-tool").setup()
   end
@@ -31,13 +32,14 @@ vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extr
 ```
 
 The plugin natively supports extraction for javascript and typescript languages.
-But one can also create their own keymap to extract code from any type of code
-language. Like so:
+But one can also create their own keymap to extract code from any type of language.
+Like so:
 
 ```lua
--- eg.: extract code to c++ main function inside current file
+-- eg: extract code to c++ main function inside current file
 vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract('int main() {\\n}')<CR>", {})
--- another eg.: extract code to c++ main function to another file (just leave second argument like that -> 'file'). You'll be prompted to enter the file name
+-- another eg: extract code to c++ main function to another file (just leave second argument like that -> 'file').
+-- You'll be prompted to enter the directory and file name
 vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract('int main() {\\n}', 'file')<CR>", {})
 ```
 
@@ -47,6 +49,7 @@ configuration by changing the properties inside the setup function.
 ```lua
 {
   "joao-lobao/extract-tool.nvim",
+  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter/nvim-treesitter-textobjects" },
   config = function()
     require("extract-tool").setup({
         -- default configuration
