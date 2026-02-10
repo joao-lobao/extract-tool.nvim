@@ -14,7 +14,6 @@ Add this in your init.lua or plugins.lua:
 ```lua
 {
   "joao-lobao/extract-tool.nvim",
-  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter/nvim-treesitter-textobjects" },
   config = function()
     require("extract-tool").setup()
   end
@@ -49,7 +48,6 @@ configuration by changing the properties inside the setup function.
 ```lua
 {
   "joao-lobao/extract-tool.nvim",
-  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-treesitter/nvim-treesitter-textobjects" },
   config = function()
     require("extract-tool").setup({
         -- default configuration
