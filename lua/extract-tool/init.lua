@@ -1,3 +1,5 @@
+local setup = pcall(require, "nvim-treesitter-textobjects")
+
 local M = {}
 
 M.config = {
@@ -8,7 +10,9 @@ M.config = {
 
 local feedkeys = function(extract_as)
 	vim.api.nvim_command("normal! k")
-	require("nvim-treesitter.textobjects.move").goto_next_end("@function.outer", "textobjects")
+	if setup then
+		require("nvim-treesitter-textobjects.move").goto_next_end("@function.outer", "textobjects")
+	end
 	vim.api.nvim_command("normal! o\n" .. extract_as)
 	vim.api.nvim_command("normal! k")
 	vim.api.nvim_command("normal! p")
