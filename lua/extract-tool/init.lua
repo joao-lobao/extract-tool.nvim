@@ -7,10 +7,9 @@ M.config = {
 }
 
 local feedkeys = function(extract_as)
-	vim.api.nvim_command("normal! k")
+	vim.api.nvim_command("normal! ]}")
 	vim.api.nvim_command("normal! o\n" .. extract_as)
-	vim.api.nvim_command("normal! k")
-	vim.api.nvim_command("normal! p")
+	vim.api.nvim_command("normal! P`[=`]")
 end
 
 local create = function(as, to)
