@@ -22,9 +22,9 @@ Add this in your init.lua or plugins.lua:
 
 ## Usage
 
-In Visual Mode select the code you want to extract. Press the keymap to extract
+In `Visual Mode` select the code you want to extract. Press the keymap to extract
 the selected code. You'll be prompted to choose how you want to extract it.
-Default keymap is:
+Keep in mind keymaps are in `Visual Mode`. Default keymap is:
 
 ```lua
 vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract()<CR>", {})
