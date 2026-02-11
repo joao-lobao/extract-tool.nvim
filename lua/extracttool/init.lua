@@ -80,7 +80,7 @@ function M.setup(opts)
 		vim.api.nvim_set_keymap(
 			"v",
 			M.config.keymaps.extract,
-			"<cmd>lua require('extract-tool').extract()<CR>",
+			"<cmd>lua require('extracttool').extract()<CR>",
 			keymap_opts
 		)
 	end

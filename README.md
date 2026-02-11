@@ -1,4 +1,4 @@
-# extract-tool.nvim
+# extracttool.nvim
 
 A simple and easy to use Neovim plugin to extract chunks of code to function,
 class method, class, etc...
@@ -13,9 +13,9 @@ Add this in your init.lua or plugins.lua:
 
 ```lua
 {
-  "joao-lobao/extract-tool.nvim",
+  "joao-lobao/extracttool.nvim",
   config = function()
-    require("extract-tool").setup()
+    require("extracttool").setup()
   end
 }
 ```
@@ -27,7 +27,7 @@ the selected code. You'll be prompted to choose how you want to extract it.
 Keep in mind keymaps are in `Visual Mode`. Default keymap is:
 
 ```lua
-vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract()<CR>", {})
+vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extracttool').extract()<CR>", {})
 ```
 
 The plugin natively supports extraction for javascript and typescript languages.
@@ -36,10 +36,10 @@ Like so:
 
 ```lua
 -- eg: extract code to c++ main function inside current file
-vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract('int main() {\\n}')<CR>", {})
+vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extracttool').extract('int main() {\\n}')<CR>", {})
 -- another eg: extract code to c++ main function to another file (just leave second argument like that -> 'file').
 -- You'll be prompted to enter the directory and file name
-vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extract-tool').extract('int main() {\\n}', 'file')<CR>", {})
+vim.api.nvim_set_keymap("v", "<leader>e", "<cmd>lua require('extracttool').extract('int main() {\\n}', 'file')<CR>", {})
 ```
 
 Below are the plugin defaults. You can override the keymap
@@ -47,9 +47,9 @@ configuration by changing the properties inside the setup function.
 
 ```lua
 {
-  "joao-lobao/extract-tool.nvim",
+  "joao-lobao/extracttool.nvim",
   config = function()
-    require("extract-tool").setup({
+    require("extracttool").setup({
         -- default configuration
         keymaps = {
             extract = "<leader>e",
